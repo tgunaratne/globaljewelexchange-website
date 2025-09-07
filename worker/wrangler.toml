@@ -1,0 +1,19 @@
+name = "gje-worker"
+main = "src/worker.js"
+compatibility_date = "2025-09-07"
+# Replace with your Cloudflare account ID if you plan to publish via CI with account_id set here
+# account_id = "YOUR_ACCOUNT_ID"
+
+routes = [
+  { pattern = "api.globaljewelexchange.com/*", custom_domain = true }
+]
+
+[vars]
+# FROM_EMAIL and FROM_NAME are set as secrets in CI
+# FROM_EMAIL = "no-reply@globaljewelexchange.com"
+# FROM_NAME  = "Global Jewel Exchange"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "gje_db"
+database_id = "YOUR_DB_ID"

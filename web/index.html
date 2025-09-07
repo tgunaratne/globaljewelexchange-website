@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- SEO -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Global Jewel Exchange — Luxury Gemstone Marketplace & Jewelry Auctions</title>
+  <meta name="description" content="Global Jewel Exchange is the luxury global marketplace for certified gemstones and fine jewelry. Discover curated collections, list your items, and join live auctions with verified sellers." />
+  <meta property="og:title" content="Global Jewel Exchange — Luxury Gemstone Marketplace" />
+  <meta property="og:description" content="Shop certified gemstones & fine jewelry. List, buy, and join live auctions on a trusted global exchange." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://globaljewelexchange.com/" />
+  <meta property="og:image" content="https://globaljewelexchange.com/assets/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Global Jewel Exchange",
+    "url":"https://globaljewelexchange.com",
+    "logo":"https://globaljewelexchange.com/assets/logo.png"
+  }
+  </script>
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0e0f12',
+            surface: '#14161b',
+            line: '#23262e',
+            gold: '#d4af37',
+            gold600: '#c49a2f',
+            text: '#f5f5f2',
+            muted: '#c7c7c0'
+          },
+          fontFamily: {
+            sans: ['ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica','Arial','Apple Color Emoji','Segoe UI Emoji'],
+            serif: ['Didot','Times New Roman','ui-serif','Georgia','Cambria','Times']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    * { -webkit-tap-highlight-color: transparent; }
+  </style>
+</head>
+<body class="bg-bg text-text font-sans antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-bg/80 border-b border-line">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3" aria-label="Global Jewel Exchange Home">
+        <span class="grid place-items-center w-9 h-9 rounded-full shadow-inner"
+              style="background: radial-gradient(120% 120% at 30% 20%, #f6e7b6, #b38728 50%, #5d4a18 85%);">◇</span>
+        <span class="font-bold tracking-wide">Global Jewel Exchange</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-6 text-muted">
+        <a class="hover:text-text" href="#about">About</a>
+        <a class="hover:text-text" href="#marketplace">Marketplace</a>
+        <a class="hover:text-text" href="#how">How it Works</a>
+        <a class="hover:text-text" href="#faq">FAQ</a>
+        <a class="inline-flex items-center justify-center rounded-full px-4 py-2 font-semibold text-black shadow"
+           style="background: linear-gradient(180deg, #d4af37, #c49a2f);" href="#signup">Get Early Access</a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button aria-label="Open Menu" id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-line text-muted">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-line">
+      <nav class="px-4 sm:px-6 py-3 grid gap-2 text-muted">
+        <a class="py-2 hover:text-text" href="#about">About</a>
+        <a class="py-2 hover:text-text" href="#marketplace">Marketplace</a>
+        <a class="py-2 hover:text-text" href="#how">How it Works</a>
+        <a class="py-2 hover:text-text" href="#faq">FAQ</a>
+        <a class="mt-2 inline-flex items-center justify-center rounded-full px-4 py-2 font-semibold text-black shadow w-max"
+           style="background: linear-gradient(180deg, #d4af37, #c49a2f);" href="#signup">Get Early Access</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden border-b border-line">
+    <!-- Replace with your premium dark hero image -->
+    <div class="absolute inset-0 -z-10 bg-[url('https://images.unsplash.com/photo-1606313564200-87dfc8cd0b5c?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/50 via-black/60 to-bg"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="inline-block text-gold font-semibold tracking-[0.25em] uppercase text-xs mb-3">Global • Verified • Secure</span>
+          <h1 class="font-serif leading-tight text-3xl sm:text-4xl lg:text-5xl mb-3">A Luxury Marketplace for Certified Gemstones & Fine Jewelry</h1>
+          <p class="text-muted text-base sm:text-lg leading-relaxed mb-5 sm:mb-6">
+            Discover curated stones and exquisite pieces from vetted sellers worldwide. Buy, list, or join live auctions on a professional, high-trust exchange for collectors, retailers, and wholesalers.
+          </p>
+
+          <!-- Countdown -->
+          <div aria-label="Countdown to launch" class="flex flex-wrap gap-3 sm:gap-4 mb-6">
+            <div class="min-w-[82px] text-center rounded-xl border border-line bg-surface px-3 py-3">
+              <div id="dd" class="text-2xl sm:text-3xl font-extrabold">00</div>
+              <div class="text-[10px] tracking-wider uppercase text-muted">Days</div>
+            </div>
+            <div class="min-w-[82px] text-center rounded-xl border border-line bg-surface px-3 py-3">
+              <div id="hh" class="text-2xl sm:text-3xl font-extrabold">00</div>
+              <div class="text-[10px] tracking-wider uppercase text-muted">Hours</div>
+            </div>
+            <div class="min-w-[82px] text-center rounded-xl border border-line bg-surface px-3 py-3">
+              <div id="mm" class="text-2xl sm:text-3xl font-extrabold">00</div>
+              <div class="text-[10px] tracking-wider uppercase text-muted">Minutes</div>
+            </div>
+            <div class="min-w-[82px] text-center rounded-xl border border-line bg-surface px-3 py-3">
+              <div id="ss" class="text-2xl sm:text-3xl font-extrabold">00</div>
+              <div class="text-[10px] tracking-wider uppercase text-muted">Seconds</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="#signup"
+               class="inline-flex items-center justify-center rounded-full px-5 py-3 font-semibold text-black shadow"
+               style="background: linear-gradient(180deg, #d4af37, #c49a2f);">Request Early Access</a>
+            <a href="#marketplace"
+               class="inline-flex items-center justify-center rounded-full px-5 py-3 border border-line text-text hover:border-gold hover:text-gold transition">Explore Categories</a>
+          </div>
+        </div>
+
+        <!-- Right column card -->
+        <div class="lg:justify-self-end">
+          <div class="rounded-2xl border border-line bg-surface/80 p-5 sm:p-6">
+            <h3 class="text-lg font-semibold mb-2">What Sets Us Apart</h3>
+            <ul class="space-y-2 text-muted leading-relaxed">
+              <li>• Verified sellers & certification-first listings</li>
+              <li>• Global coverage, multi-currency pricing</li>
+              <li>• Secure transactions and escrow options</li>
+              <li>• Professional dispute resolution & KYC</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Props -->
+  <section id="marketplace" class="border-b border-line">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <div class="max-w-2xl">
+        <h2 class="font-serif text-2xl sm:text-3xl mb-2">Built for Serious Buyers & Sellers</h2>
+        <p class="text-muted">Whether sourcing rare stones, expanding retail inventory, or listing bespoke pieces, Global Jewel Exchange provides the structure, security, and visibility you need.</p>
+      </div>
+
+      <div class="mt-8 grid sm:grid-cols-2 gap-4">
+        <article class="rounded-2xl border border-line bg-surface p-5">
+          <h3 class="font-semibold mb-1">Certification-First Listings</h3>
+          <p class="text-muted">Attach lab reports (GIA, IGI) and provenance to every listing for transparency and buyer confidence.</p>
+        </article>
+        <article class="rounded-2xl border border-line bg-surface p-5">
+          <h3 class="font-semibold mb-1">Professional Exchange Tools</h3>
+          <p class="text-muted">Bulk uploads, inventory management, reserve prices for auctions, and compliant invoicing.</p>
+        </article>
+        <article class="rounded-2xl border border-line bg-surface p-5">
+          <h3 class="font-semibold mb-1">Global Logistics Ready</h3>
+          <p class="text-muted">Shipping guidance, insurance partners, and customs support for international trade.</p>
+        </article>
+        <article class="rounded-2xl border border-line bg-surface p-5">
+          <h3 class="font-semibold mb-1">High-Trust Payments</h3>
+          <p class="text-muted">Secure payments with optional escrow and robust KYC/AML checks.</p>
+        </article>
+      </div>
+
+      <div class="mt-10">
+        <h3 class="font-semibold mb-2">Browse by Category</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-full border border-line text-muted">Rubies</span>
+          <span class="px-3 py-1 rounded-full border border-line text-muted">Sapphires</span>
+          <span class="px-3 py-1 rounded-full border border-line text-muted">Emeralds</span>
+          <span class="px-3 py-1 rounded-full border border-line text-muted">Spinel</span>
+          <span class="px-3 py-1 rounded-full border border-line text-muted">Alexandrite</span>
+          <span class="px-3 py-1 rounded-full border border-line text-muted">Diamond Jewelry</span>
+          <span class="px-3 py-1 rounded-full border border-line text-muted">Gold Jewelry</span>
+          <span class="px-3 py-1 rounded-full border border-line text-muted">Platinum Jewelry</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section id="how" class="border-b border-line">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <div class="max-w-2xl mb-6">
+        <h2 class="font-serif text-2xl sm:text-3xl mb-2">How It Works</h2>
+        <p class="text-muted">A clear, professional flow designed for confidence from listing to delivery.</p>
+      </div>
+      <div class="grid gap-4">
+        <div class="flex items-start gap-3 rounded-xl border border-line bg-surface p-4">
+          <div class="grid place-items-center w-8 h-8 rounded-full font-extrabold text-black"
+               style="background: linear-gradient(180deg, #d4af37, #c49a2f);">1</div>
+          <div>
+            <h3 class="font-semibold">Create Your Account</h3>
+            <p class="text-muted">Request early access, complete KYC, and set up your profile.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 rounded-xl border border-line bg-surface p-4">
+          <div class="grid place-items-center w-8 h-8 rounded-full font-extrabold text-black"
+               style="background: linear-gradient(180deg, #d4af37, #c49a2f);">2</div>
+          <div>
+            <h3 class="font-semibold">List or Discover</h3>
+            <p class="text-muted">List certified stones & jewelry, or search with precise filters.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 rounded-xl border border-line bg-surface p-4">
+          <div class="grid place-items-center w-8 h-8 rounded-full font-extrabold text-black"
+               style="background: linear-gradient(180deg, #d4af37, #c49a2f);">3</div>
+          <div>
+            <h3 class="font-semibold">Trade with Confidence</h3>
+            <p class="text-muted">Secure payments, escrow options, and professional dispute handling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="border-b border-line">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <div class="max-w-2xl mb-6">
+        <h2 class="font-serif text-2xl sm:text-3xl mb-2">Our Promise</h2>
+        <p class="text-muted">A luxury-grade platform experience, powered by rigorous verification and transparent documentation — elevating trust and efficiency in the global gems & jewelry trade.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="rounded-2xl border border-line bg-surface p-5">
+          <h3 class="font-semibold mb-1">For Buyers</h3>
+          <p class="text-muted">Confidence through documentation and verified sellers, with tools that simplify evaluation, negotiation, and checkout.</p>
+        </div>
+        <div class="rounded-2xl border border-line bg-surface p-5">
+          <h3 class="font-semibold mb-1">For Sellers</h3>
+          <p class="text-muted">Professional storefronts, global reach, and an audience that values authenticity, provenance, and presentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="border-b border-line">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <div class="max-w-2xl mb-6">
+        <h2 class="font-serif text-2xl sm:text-3xl mb-2">FAQ</h2>
+        <p class="text-muted">Short answers to common questions. Detailed policies will be available at launch.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="rounded-2xl border border-line bg-surface p-5">
+          <h3 class="font-semibold mb-1">Do you verify sellers?</h3>
+          <p class="text-muted">Yes — we run verification and KYC before sellers can list inventory or run auctions.</p>
+        </div>
+        <div class="rounded-2xl border border-line bg-surface p-5">
+          <h3 class="font-semibold mb-1">Are listings certified?</h3>
+          <p class="text-muted">We encourage certification from recognized labs and require documentation for specific tiers.</p>
+        </div>
+        <div class="rounded-2xl border border-line bg-surface p-5">
+          <h3 class="font-semibold mb-1">Which countries are supported?</h3>
+          <p class="text-muted">We are global. Logistics, insurance, and customs support are provided for major trade lanes.</p>
+        </div>
+        <div class="rounded-2xl border border-line bg-surface p-5">
+          <h3 class="font-semibold mb-1">Do you offer escrow?</h3>
+          <p class="text-muted">Yes. Escrow is available for eligible transactions to protect both parties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signup -->
+  <section id="signup" class="border-b border-line">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <div class="max-w-2xl mb-6">
+        <h2 class="font-serif text-2xl sm:text-3xl mb-2">Request Early Access</h2>
+        <p class="text-muted">Be among the first to experience the Global Jewel Exchange. We’ll notify you when accounts open.</p>
+      </div>
+
+      <div class="rounded-2xl border border-line bg-surface p-5 sm:p-6">
+        <form id="earlyForm" class="grid gap-4" aria-label="Early access form">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="grid gap-2">
+              <span class="text-muted text-sm">Full Name</span>
+              <input required name="name" type="text" placeholder="Your name"
+                     class="w-full rounded-xl border border-line bg-bg px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-gold/40" />
+            </label>
+            <label class="grid gap-2">
+              <span class="text-muted text-sm">Email</span>
+              <input required name="email" type="email" placeholder="you@example.com"
+                     class="w-full rounded-xl border border-line bg-bg px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-gold/40" />
+            </label>
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            <label class="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-line text-sm text-muted">
+              <input type="radio" name="type" value="buyer" checked class="accent-[#b38728]"> Buyer
+            </label>
+            <label class="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-line text-sm text-muted">
+              <input type="radio" name="type" value="seller" class="accent-[#b38728]"> Seller
+            </label>
+            <label class="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-line text-sm text-muted">
+              <input type="radio" name="type" value="both" class="accent-[#b38728]"> Both
+            </label>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
+            <button type="submit"
+                    class="inline-flex items-center justify-center rounded-full px-5 py-3 font-semibold text-black shadow w-full sm:w-auto"
+                    style="background: linear-gradient(180deg, #d4af37, #c49a2f);">
+              Request Invite
+            </button>
+            <p id="formMsg" class="text-sm text-muted"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-muted">
+        <div class="flex items-center gap-3">
+          <span class="grid place-items-center w-9 h-9 rounded-full shadow-inner"
+                style="background: radial-gradient(120% 120% at 30% 20%, #f6e7b6, #b38728 50%, #5d4a18 85%);">◇</span>
+          <span>© <span id="year"></span> Global Jewel Exchange</span>
+        </div>
+        <div class="flex gap-4">
+          <a class="hover:text-text" href="#faq">FAQ</a>
+          <a class="hover:text-text" href="#">Terms</a>
+          <a class="hover:text-text" href="#">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Countdown to Sep 28, 2025 09:00:00 (local time)
+    (function(){
+      const target = new Date("Sep 28, 2025 09:00:00").getTime();
+      const dd = document.getElementById("dd");
+      const hh = document.getElementById("hh");
+      const mm = document.getElementById("mm");
+      const ss = document.getElementById("ss");
+      const pad = n => (n < 10 ? "0" + n : n);
+
+      function tick(){
+        const dist = target - Date.now();
+        if (dist <= 0) { dd.textContent = hh.textContent = mm.textContent = ss.textContent = "00"; return; }
+        const d = Math.floor(dist/86400000);
+        const h = Math.floor((dist%86400000)/3600000);
+        const m = Math.floor((dist%3600000)/60000);
+        const s = Math.floor((dist%60000)/1000);
+        dd.textContent = pad(d); hh.textContent = pad(h); mm.textContent = pad(m); ss.textContent = pad(s);
+      }
+      tick(); setInterval(tick, 1000);
+    })();
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Early access form (POST to your Worker API)
+    const form = document.getElementById('earlyForm');
+    const msg = document.getElementById('formMsg');
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      msg.textContent = 'Submitting...';
+      const fd = new FormData(form);
+      const payload = {
+        name: fd.get('name'),
+        email: fd.get('email'),
+        type: fd.get('type')
+      };
+      try {
+        const res = await fetch('https://api.globaljewelexchange.com/api/early-access', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json().catch(()=>({ok:false}));
+        if (res.ok && data.ok) {
+          msg.textContent = 'Thank you! We will be in touch.';
+          form.reset();
+        } else {
+          msg.textContent = data.error ? ('Error: ' + data.error) : 'Something went wrong. Please try again.';
+        }
+      } catch (err) {
+        msg.textContent = 'Network error. Please try again.';
+      }
+    });
+  </script>
+</body>
+</html>
