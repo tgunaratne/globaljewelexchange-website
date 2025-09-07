@@ -48,6 +48,7 @@
     }
   </script>
   <style>
+    /* Smooth scroll & tap highlight */
     html { scroll-behavior: smooth; }
     * { -webkit-tap-highlight-color: transparent; }
   </style>
@@ -126,13 +127,6 @@
             </div>
           </div>
 
-          <div class="flex flex-wrap gap-3">
-            <a href="#signup"
-               class="inline-flex items-center justify-center rounded-full px-5 py-3 font-semibold text-black shadow"
-               style="background: linear-gradient(180deg, #d4af37, #c49a2f);">Request Early Access</a>
-            <a href="#marketplace"
-               class="inline-flex items-center justify-center rounded-full px-5 py-3 border border-line text-text hover:border-gold hover:text-gold transition">Explore Categories</a>
-          </div>
         </div>
 
         <!-- Right column card -->
@@ -178,19 +172,6 @@
         </article>
       </div>
 
-      <div class="mt-10">
-        <h3 class="font-semibold mb-2">Browse by Category</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 rounded-full border border-line text-muted">Rubies</span>
-          <span class="px-3 py-1 rounded-full border border-line text-muted">Sapphires</span>
-          <span class="px-3 py-1 rounded-full border border-line text-muted">Emeralds</span>
-          <span class="px-3 py-1 rounded-full border border-line text-muted">Spinel</span>
-          <span class="px-3 py-1 rounded-full border border-line text-muted">Alexandrite</span>
-          <span class="px-3 py-1 rounded-full border border-line text-muted">Diamond Jewelry</span>
-          <span class="px-3 py-1 rounded-full border border-line text-muted">Gold Jewelry</span>
-          <span class="px-3 py-1 rounded-full border border-line text-muted">Platinum Jewelry</span>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -278,53 +259,6 @@
     </div>
   </section>
 
-  <!-- Signup -->
-  <section id="signup" class="border-b border-line">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-      <div class="max-w-2xl mb-6">
-        <h2 class="font-serif text-2xl sm:text-3xl mb-2">Request Early Access</h2>
-        <p class="text-muted">Be among the first to experience the Global Jewel Exchange. We’ll notify you when accounts open.</p>
-      </div>
-
-      <div class="rounded-2xl border border-line bg-surface p-5 sm:p-6">
-        <form id="earlyForm" class="grid gap-4" aria-label="Early access form">
-          <div class="grid sm:grid-cols-2 gap-4">
-            <label class="grid gap-2">
-              <span class="text-muted text-sm">Full Name</span>
-              <input required name="name" type="text" placeholder="Your name"
-                     class="w-full rounded-xl border border-line bg-bg px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-gold/40" />
-            </label>
-            <label class="grid gap-2">
-              <span class="text-muted text-sm">Email</span>
-              <input required name="email" type="email" placeholder="you@example.com"
-                     class="w-full rounded-xl border border-line bg-bg px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-gold/40" />
-            </label>
-          </div>
-
-          <div class="flex flex-wrap gap-2">
-            <label class="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-line text-sm text-muted">
-              <input type="radio" name="type" value="buyer" checked class="accent-[#b38728]"> Buyer
-            </label>
-            <label class="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-line text-sm text-muted">
-              <input type="radio" name="type" value="seller" class="accent-[#b38728]"> Seller
-            </label>
-            <label class="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-line text-sm text-muted">
-              <input type="radio" name="type" value="both" class="accent-[#b38728]"> Both
-            </label>
-          </div>
-
-          <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
-            <button type="submit"
-                    class="inline-flex items-center justify-center rounded-full px-5 py-3 font-semibold text-black shadow w-full sm:w-auto"
-                    style="background: linear-gradient(180deg, #d4af37, #c49a2f);">
-              Request Invite
-            </button>
-            <p id="formMsg" class="text-sm text-muted"></p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer class="py-8">
@@ -375,7 +309,7 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Early access form (POST to your Worker API)
+    // Early access form (POST to your API)
     const form = document.getElementById('earlyForm');
     const msg = document.getElementById('formMsg');
     form?.addEventListener('submit', async (e) => {
@@ -388,7 +322,7 @@
         type: fd.get('type')
       };
       try {
-        const res = await fetch('https://api.globaljewelexchange.com/api/early-access', {
+        const res = await fetch('/api/early-access', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(payload)
@@ -398,7 +332,7 @@
           msg.textContent = 'Thank you! We will be in touch.';
           form.reset();
         } else {
-          msg.textContent = data.error ? ('Error: ' + data.error) : 'Something went wrong. Please try again.';
+          msg.textContent = 'Something went wrong. Please try again.';
         }
       } catch (err) {
         msg.textContent = 'Network error. Please try again.';
